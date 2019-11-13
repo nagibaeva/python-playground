@@ -15,7 +15,7 @@ while polling_active:
     responses[name] = response
 
     # Find out if to continue 
-    repeat = input("\nWhould you let another person respond? (yes \ no): ")
+    repeat = input("\nWhould you let another person respond? (yes \\ no): ")
     if repeat == 'no':
         print("Thank you and good bye!")
         polling_active = False

@@ -8,7 +8,7 @@ while survey_active:
 
     vacations[name] = location
 
-    repeat = input("\nWould you like to continue? (yes \ no): ")
+    repeat = input("\nWould you like to continue? (yes / no): ")
     if repeat == 'no':
         print("\nGood Bye!")
         survey_active = False
