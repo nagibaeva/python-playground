@@ -44,3 +44,7 @@ print(my_beetle.get_descriptive_name())
 
 my_roadster = car.ElectricCar('tesla', 'rodaster', 2019)
 print(my_roadster.get_descriptive_name())
+
+# Python standard library
+from random import randint
+randint(1,6)
