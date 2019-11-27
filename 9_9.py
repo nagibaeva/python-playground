@@ -1,10 +1,3 @@
-# Inheritance:  when you write specialized class based on already existing class.
-# Original class - parent class
-# New class - child class
-# New class can inherit from parent class all atributes and methods, but it is free to define new attributes and methods on its own.
-
-# Ex: write class ElectricalCar on the basis of Car class.
-
 class Car:
     """A simple attemt to summarize a car."""
 
@@ -41,14 +34,9 @@ class Car:
 my_new_car = Car('honda', 'crv', '2018')
 print(my_new_car.get_descriptive_name())
 
-# Note: the parent class should be part of current file and should go first (since order matters).
-# To make child class use:      __init__ function     
-# and in order to call methods from parent class use:       super().__init__(attributes)   function.
-# Note you can add any attributes and methods to the child class.
-
 class Battery:
     """Model a battery from electric cars."""
-    def __init__(self, battery_size=75): #Note that battery_size is optional parameter if no value is provided.
+    def __init__(self, battery_size=75):
         """Initialize the battery's attributes"""
         self.battery_size = battery_size
     def describe_battery(self):
@@ -62,6 +50,13 @@ class Battery:
             range = 315
 
         print(f"This car can go to about {range} miles on a full charge.")
+    def upgrade_battery(self):
+        """Check and upgrade battery size"""
+        if self.battery_size < 100:
+            print(f"\nUpgrading the battery size.")
+            self.battery_size = 100
+        else:
+            print("\nThe battery size is upgraded!")
 
 class ElectricCar(Car):
     """Respresent aspects of a car, specific to electric vehicles."""
@@ -78,15 +73,6 @@ my_tesla = ElectricCar('tesla', 'model s', 2019)
 print(my_tesla.get_descriptive_name())
 my_tesla.battery.describe_battery()
 my_tesla.battery.get_range()
-
-# If the parent class contains methods that does not fit the child class, you can override this particular method.
-# To override any method from parent class in child class:      define a method in child class with the same name as the method in parent class that you want to override. In this case, python will ignore the method in parent class and use the new in child class.
-
-# Ex. The electric car does not have gas tank, so we can override given method:
-
-    # def fill_gas_tank(self):
-    #     """Electric cars don't have gast tank."""
-    #     print("This car doesn't need a gas tank!")
-
-# You can use classes as attributes to classes, i.e. classes in classes.
-# Above: We will update class ElectricCar with class Battery. (First create class Battery, then use it as attribute in class ElectricCar). In class Battery we will store every method assosiated with battery of the car. Then we assign the class Battery as attribute of class ElectricCar. And now we can access every method in class Battery using:   instance.class_set_as_attribute.method()
+my_tesla.battery.upgrade_battery()
+my_tesla.battery.describe_battery()
+my_tesla.battery.upgrade_battery()
