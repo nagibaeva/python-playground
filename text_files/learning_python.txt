@@ -1,0 +1,5 @@
+In Python you can add and substract numbers
+In Python you can print statements
+In Python you can input user information
+In Python you can loop through list and dictionaries
+In Python you can create programms
