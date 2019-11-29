@@ -1,0 +1,4 @@
+I love programming, but now not very good at it.
+I study python every day.
+I am currently on chapter 10.
+Soon, I will finish the basics of python and start doing project of the book.
