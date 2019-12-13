@@ -41,7 +41,15 @@ def greet_user():
     """Greet the user by name"""
     username = get_stored_username()
     if username:
-        print(f"Welcome back, {username}!")
+        check = input(f"Is username {username} is correct? y/n")
+        if check == 'y':
+            print(f"Welcome back, {username}!")
+        else:
+            username = input("What is your name?: ")
+            filename = 'text_files/username.json'
+            with open(filename, 'w') as f:
+                json.dump(username, f)
+            return username
     else: 
         username = get_new_username()
         print(f"We will remember you when you are back, {username}!")
